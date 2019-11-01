@@ -4,7 +4,7 @@
       .side-header__box__user-name
         = current_user.name
       .side-header__box__menu
-        = link_to "#",class: "side-header__box__menu__link" do
+        = link_to new_group_path ,class: "side-header__box__menu__link" do
           = fa_icon 'edit'
         = link_to edit_user_path(current_user) ,class: "side-header__box__menu__link" do
           = fa_icon 'cog'
