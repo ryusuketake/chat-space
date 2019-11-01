@@ -1,16 +1,10 @@
-.notice {
-  text-align: center;
-  background-color: $LightBlue;
-  color: $White;
-}
-
-.chat-side {
+.side-bar {
   width: 300px;
   float: left;
   .side-header {
     padding-right: 20px;
     padding-left: 20px;
-    background-color: #253141; 
+    background-color: $SideBlueDark; 
     color: $White;
     &__box {
       height: 100px;
@@ -31,7 +25,7 @@
   }
   .groups {
     height: calc(100vh - 100px);
-    background-color: #2f3e51;
+    background-color: $SideBlueDark;
     padding-right: 20px;
     padding-left: 20px;
 
@@ -105,7 +99,7 @@
       &__talker {
         font-size: 16px;
         font-weight: bold;
-        color: #434A54;
+        color: $Black;
         float:left;
       }
       &__date {
@@ -117,7 +111,7 @@
     }
     &__text {
       font-size: 14px;
-      color: #434A54;
+      color: $Black;
       margin-bottom: 10px;
     }
   }
