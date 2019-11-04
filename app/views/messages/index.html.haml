@@ -4,26 +4,22 @@
     .main-header
       .main-header__left-box
         .main-header__left-box__current-group
-          takegroup
+          = @group.name
         .main-header__left-box__member-list
           Member：
           .main-header__left-box__member-list__member
-            take
-      = link_to "#",class: "main-header__edit-btn" do
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
+      = link_to edit_group_path(@group),class: "main-header__edit-btn" do
         Edit
     .messages
-      = render partial: 'message'
-      = render partial: 'message'
-      = render partial: 'message'
+      = render @messages
     .form.clearfix
-      %form.new_message.clearfix
-        .input-box
-          %input.input-box__text{placeholder:'type a message',type:'text'}
-          %label.input-box__image
-            = fa_icon 'image',class:'input-box__image--bigger-icon'
-            %input.input-box__image__file{type:'file'}
-        %input.submit-btn{type:'submit',value:'Send'}
-
-
-
-
+      = form_for [@group, @message] do |f|
+        .form.new_message.clearfix
+          .input-box
+            = f.text_field :content,class: 'input-box__text', placeholder: 'type a message'
+            = f.label :image, class: 'input-box__image' do
+              = fa_icon 'image',class:'input-box__image--bigger-icon'
+              = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'
