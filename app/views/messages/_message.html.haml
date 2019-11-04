@@ -1,8 +1,10 @@
 .message
   .message__upper-info.clearfix
     .message__upper-info__talker
-      take
+      = message.user.name
     .message__upper-info__date
-      2019/10/29(Tue) 21:33:01
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
   .message__text
-    hogehoge生きる
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url if message.image.present?

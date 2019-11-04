@@ -25,7 +25,7 @@
   }
   .groups {
     height: calc(100vh - 100px);
-    background-color: $SideBlueDark;
+    background-color: $SideBlueLight;
     padding-right: 20px;
     padding-left: 20px;
 
@@ -123,6 +123,7 @@
   .clearfix{}
   .new_message {
     box-sizing: border-box;
+    padding: 0;
     .clearfix{}
     .input-box {
       display: inline-block;
