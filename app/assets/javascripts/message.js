@@ -1,23 +1,21 @@
 $(function() {
   function buildHTML(message) {
-    var image = ""
-    message.image ? image = `<img src="${message.image}">` : image = ""
+    var image = message.image ? `<img src="${message.image}">` : "";
 
-    var html = `<div class="message">
-    <div class="message__upper-info clearfix">
-    <div class="message__upper-info__talker">
-    ${message.user_name}
-    </div>
-    <div class="message__upper-info__date">
-    ${message.created_at}
-    </div>
-    </div>
-    <div class="message__text">
-    ${message.content}
-    ${image}
-    
-    </div>
-    </div>`
+    var html = `<div class = "message">
+                  <div class = "message__upper-info clearfix">
+                    <div class = "message__upper-info__talker">
+                      ${message.user_name}
+                    </div>
+                    <div class = "message__upper-info__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class = "message__text">
+                    ${message.content}
+                    ${image}
+                  </div>
+                </div>`
 
     return html;
   }
